@@ -54,9 +54,6 @@ void rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
                 rgb_matrix_set_color_by_keycode(led_min, led_max, current_layer, is_not_transparent, WIN_LAYER_DEFAULT_COLOR);
             }
 #endif
-#ifdef FN_LAYER_TRANSPARENT_KEYS_OFF
-            rgb_matrix_set_color_by_keycode(led_min, led_max, current_layer, is_transparent, RGB_OFF);
-#endif
             break;
     }
 }
@@ -79,7 +76,7 @@ void rgb_matrix_set_color_by_keycode(uint8_t led_min, uint8_t led_max, uint8_t l
 }
 
 bool is_caps_lock_indicator(uint16_t keycode) {
-    bool indicator = keycode == KC_CAPS || keycode == KC_LGMAC || keycode == KC_LGWIN;
+    bool indicator = keycode == KC_CAPS;
 #ifdef CAPS_LOCK_INDICATOR_LIGHT_60
     return (KC_A <= keycode && keycode <= KC_CAPS) || (KC_LEFT_CTRL <= keycode && keycode <= KC_RIGHT_GUI) || keycode == KC_MACFN || keycode == KC_WINFN || indicator;
 #else
