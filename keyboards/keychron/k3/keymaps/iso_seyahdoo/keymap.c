@@ -28,18 +28,6 @@ enum layer_names {
   WIN_FN
 };
 
-typedef union {
-  uint32_t raw;
-  struct {
-    bool caps_lock_light_tab :1;
-    bool caps_lock_light_alphas :1;
-    bool fn_layer_transparent_keys_off :1;
-    bool fn_layer_color_enable :1;
-  };
-} user_config_t;
-
-user_config_t user_config;
-
 #define KC_TASK LGUI(KC_TAB)        // Task viewer
 #define KC_FLXP LGUI(KC_E)          // Windows file explorer
 #define KC_SNIP LGUI(LSFT(KC_S))    // Windows snip tool
@@ -187,31 +175,3 @@ void matrix_init_user(void) {
     rgb_matrix_init_user();
 }
 
-void keyboard_post_init_user(void) {
-    user_config.raw = eeconfig_read_user();
-}
-
-void eeconfig_init_user(void) {
-    user_config.raw = 0;
-    user_config.caps_lock_light_tab = false;
-    user_config.caps_lock_light_alphas = false;
-    user_config.fn_layer_transparent_keys_off = true;
-    user_config.fn_layer_color_enable = false;
-    eeconfig_update_user(user_config.raw);
-}
-
-ool get_caps_lock_light_tab(void) {
-    return user_config.caps_lock_light_tab;
-}
-
-bool get_caps_lock_light_alphas(void) {
-    return user_config.caps_lock_light_alphas;
-}
-
-bool get_fn_layer_transparent_keys_off(void) {
-    return user_config.fn_layer_transparent_keys_off;
-}
-
-bool get_fn_layer_color_enable(void) {
-    return user_config.fn_layer_color_enable;
-}
