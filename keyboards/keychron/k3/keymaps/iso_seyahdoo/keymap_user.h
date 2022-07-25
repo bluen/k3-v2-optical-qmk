@@ -1,4 +1,4 @@
-/* Copyright 2021 @ Mike Killewald
+/* Copyright 2022 @ Teimor Epstein
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -27,7 +27,22 @@ enum layers {
 
 // clang-format on
 
-bool get_caps_lock_light_tab(void);
-bool get_caps_lock_light_alphas(void);
-bool get_fn_layer_transparent_keys_off(void);
-bool get_fn_layer_color_enable(void);
+// Tap dance enums
+enum {
+    MAC_CAPS_LANGUAGE_CHANGE,
+    WIN_CAPS_LANGUAGE_CHANGE,
+};
+
+#ifdef TAP_DANCE_ENABLE
+#   define KC_LGMAC TD(MAC_CAPS_LANGUAGE_CHANGE)
+#   define KC_LGWIN TD(WIN_CAPS_LANGUAGE_CHANGE)
+#else
+#   define KC_LGMAC KC_CAPS
+#   define KC_LGWIN KC_CAPS
+#endif
+#define KC_MACFN MO(MAC_FN)
+#define KC_WINFN MO(WIN_FN)
+#define KC_LMAC C(G(KC_Q))
+#define KC_MACPS G(S(KC_5))
+#define KC_TASK G(KC_TAB)
+#define KC_FLXP G(KC_E)
