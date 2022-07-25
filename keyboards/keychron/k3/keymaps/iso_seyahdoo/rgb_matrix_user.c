@@ -36,21 +36,14 @@ void rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
     switch (current_layer) {
         case MAC_BASE:
         case WIN_BASE:
-#ifdef CAPS_LOCK_INDICATOR_COLOR
             if (host_keyboard_led_state().caps_lock) {
                 rgb_matrix_set_color_by_keycode(led_min, led_max, current_layer, is_caps_lock_indicator, CAPS_LOCK_INDICATOR_COLOR);
             }
-#endif
             break;
         case MAC_FN:
         case WIN_FN:
-#ifdef FN_LAYER_COLOR
             if (get_fn_layer_color_enable()) {
                 rgb_matrix_set_color_by_keycode(led_min, led_max, current_layer, is_not_transparent, FN_LAYER_COLOR);
-            }
-#endif
-            if (get_fn_layer_transparent_keys_off()) {
-                rgb_matrix_set_color_by_keycode(led_min, led_max, current_layer, is_transparent, RGB_OFF);
             }
             break;
     }
