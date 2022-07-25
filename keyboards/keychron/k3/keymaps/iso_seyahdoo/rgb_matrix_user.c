@@ -32,7 +32,7 @@ void rgb_matrix_init_user(void) {
 }
 
 void rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
-    uint8_t current_layer = get_highest_layer(layer_state);
+    uint8_t current_layer = get_highest_layer(layer_state | default_layer_state);
     switch (current_layer) {
         case MAC_BASE:
         case WIN_BASE:
