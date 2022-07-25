@@ -22,15 +22,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 // clang-format off
 
-enum custom_keycodes {
-#ifdef VIA_ENABLE
-    KC_MISSION_CONTROL = USER00,
-#else
-    KC_MISSION_CONTROL = SAFE_RANGE,
-#endif
-    KC_LAUNCHPAD
-};
-
 #define TG_NKRO MAGIC_TOGGLE_NKRO
 
 #define KC_TASK LGUI(KC_TAB)        // Task viewer
