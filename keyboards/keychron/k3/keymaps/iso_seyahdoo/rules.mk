@@ -1,5 +1,7 @@
 OPT_DEFS += -DOPTICAL_MATRIX
 VIA_ENABLE = yes
 MOUSEKEY_ENABLE = no
+DYNAMIC_MACRO_ENABLE = yes
+
 
 SRC += rgb_matrix_user.c
