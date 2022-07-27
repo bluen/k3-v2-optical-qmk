@@ -17,7 +17,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 #include QMK_KEYBOARD_H
 #include "keymap_user.h"
-#include "keymap_german_mac_iso.h"
+#include "keymap_german_osx.h"
 #include "rgb_matrix_user.h"
 
 
