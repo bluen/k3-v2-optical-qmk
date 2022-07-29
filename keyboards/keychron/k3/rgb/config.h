@@ -63,5 +63,4 @@
 #define CAPS_LOCK_INDICATOR_COLOR RGB_RED
 #define FN_LAYER_COLOR RGB_MAGENTA
 
-// VIA lighting is handled by the keyboard-level code
-#define VIA_CUSTOM_LIGHTING_ENABLE
+#define TAPPING_TERM 175

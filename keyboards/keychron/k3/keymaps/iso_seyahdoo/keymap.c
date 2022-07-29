@@ -77,7 +77,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       RESET,      KC_BRID,    KC_BRIU,    KC_MSSN,    KC_FIND,    RGB_VAD,    RGB_VAI,    KC_MPRV,    KC_MPLY,    KC_MNXT,    KC_MUTE,    KC_VOLD,    KC_VOLU,    KC_MSCR,    KC_INS,     RGB_TOG    ,
       _______,    DM_REC1,    DM_REC2,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,                RGB_MOD    ,
       _______,    DM_PLY1,    DM_PLY2,    _______, EEPROM_RESET,  _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,                            RGB_RMOD   ,
-      _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,                RGB_SPI    ,
+      _______,    KC_ASTG,    KC_ASUP,    KC_ASDN,    KC_ASRP,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,                RGB_SPI    ,
       _______,    _______,    _______,    _______,    _______,    _______,    _______,  MAGIC_HOST_NKRO, MAGIC_UNHOST_NKRO,  _______,    _______,    _______,     _______,    RGB_SAI,    RGB_SPD    ,
       _______,    _______,    OSM(MOD_HYPR),                                  _______,                                 OSM(MOD_HYPR),_______,OSM(MOD_MEH),   RGB_HUD,    RGB_SAD,    RGB_HUI
   ),
