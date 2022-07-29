@@ -10,3 +10,16 @@ enum layer_names {
   WIN_BASE,
   WIN_FN
 };
+
+enum {
+  TD_0,
+  TD_1,
+  TD_2,
+  TD_3,
+  TD_4,
+  TD_5,
+  TD_6,
+  TD_7
+};
+
+qk_tap_dance_action_t tap_dance_actions[] = {};
