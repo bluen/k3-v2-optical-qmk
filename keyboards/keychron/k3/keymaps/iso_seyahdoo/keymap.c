@@ -31,7 +31,10 @@ enum {
   TD_7
 };
 
-qk_tap_dance_action_t tap_dance_actions[] = {};
+qk_tap_dance_action_t tap_dance_actions[] = {
+  [TD_0] = ACTION_TAP_DANCE_DOUBLE(KC_SPC, KC_ENT),
+  [TD_1] = ACTION_TAP_DANCE_DOUBLE(KC_LSFT, KC_CAPS),
+};
 
 
 #define KC_TASK LGUI(KC_TAB)        // Task viewer
@@ -66,8 +69,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       DE_CIRC,   DE_1,      DE_2,      DE_3,    DE_4,    DE_5,    DE_6,     DE_7,    DE_8,    DE_9,      DE_0,       DE_SS,      DE_ACUT,   KC_BSPC,              KC_PGUP   ,
       KC_TAB,    DE_Q,      DE_W,      DE_E,    DE_R,    DE_T,    DE_Z,     DE_U,    DE_I,    DE_O,      DE_P,       DE_UDIA,    DE_PLUS,                         KC_PGDN   ,
       KC_CAPS,   DE_A,      DE_S,      DE_D,    DE_F,    DE_G,    DE_H,     DE_J,    DE_K,    DE_L,      DE_ODIA,    DE_ADIA,    DE_HASH,   KC_ENT,               KC_HOME   ,
-      KC_LSFT,   DE_LABK,   DE_Y,      DE_X,    DE_C,    DE_V,    DE_B,     DE_N,    DE_M,    DE_COMM,   DE_DOT,     DE_MINS,               KC_RSFT,   KC_UP,     KC_END    ,
-      KC_LCTL, OSM(MOD_LALT), KC_LGUI,                              KC_SPC,                              KC_RGUI,   MO(MAC_FN),  KC_RCTL,   KC_LEFT,   KC_DOWN,   KC_RGHT
+      TD(TD_1),  DE_LABK,   DE_Y,      DE_X,    DE_C,    DE_V,    DE_B,     DE_N,    DE_M,    DE_COMM,   DE_DOT,     DE_MINS,               KC_RSFT,   KC_UP,     KC_END    ,
+      KC_LCTL, OSM(MOD_LALT), KC_LGUI,                            TD(TD_0),                              KC_RGUI,   MO(MAC_FN),  KC_RCTL,   KC_LEFT,   KC_DOWN,   KC_RGHT
   ),
 
 /*  Mac Fn overlay
@@ -90,7 +93,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       RESET,      KC_BRID,    KC_BRIU,    KC_MSSN,    KC_FIND,    RGB_VAD,    RGB_VAI,    KC_MPRV,    KC_MPLY,    KC_MNXT,    KC_MUTE,    KC_VOLD,    KC_VOLU,    KC_MSCR,    KC_INS,     RGB_TOG    ,
       _______,    DM_REC1,    DM_REC2,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,                RGB_MOD    ,
       _______,    DM_PLY1,    DM_PLY2,    _______, EEPROM_RESET,  _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,                            RGB_RMOD   ,
-      _______,    KC_ASTG,    KC_ASUP,    KC_ASDN,    KC_ASRP,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,                RGB_SPI    ,
+      _______,    KC_ASTG,    KC_ASDN,    KC_ASUP,    KC_ASRP,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,                RGB_SPI    ,
       _______,    _______,    _______,    _______,    _______,    _______,    _______,  MAGIC_HOST_NKRO, MAGIC_UNHOST_NKRO,  _______,    _______,    _______,     _______,    RGB_SAI,    RGB_SPD    ,
       _______,    _______,    OSM(MOD_HYPR),                                  _______,                                 OSM(MOD_HYPR),_______,OSM(MOD_MEH),   RGB_HUD,    RGB_SAD,    RGB_HUI
   ),
