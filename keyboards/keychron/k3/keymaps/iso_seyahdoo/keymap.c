@@ -20,6 +20,19 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "keymap_german_osx.h"
 #include "rgb_matrix_user.h"
 
+enum {
+  TD_0,
+  TD_1,
+  TD_2,
+  TD_3,
+  TD_4,
+  TD_5,
+  TD_6,
+  TD_7
+};
+
+qk_tap_dance_action_t tap_dance_actions[] = {};
+
 
 #define KC_TASK LGUI(KC_TAB)        // Task viewer
 #define KC_FLXP LGUI(KC_E)          // Windows file explorer
