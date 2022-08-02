@@ -181,6 +181,6 @@ void keyboard_post_init_user(void) {
 }
 
 void matrix_init_user(void) {
-    // rgb_matrix_init_user();
+    rgb_matrix_init_user();
 }
 
